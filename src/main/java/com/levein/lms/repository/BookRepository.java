@@ -19,6 +19,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @EntityGraph(attributePaths = "borrowedBy")
     Optional<Book> findById(long id);
 
+    Optional<Book> findBookById(long id);
 
     Page<Book> findAll(Pageable pageable);
 

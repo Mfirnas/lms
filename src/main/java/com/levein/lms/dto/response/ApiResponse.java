@@ -20,7 +20,7 @@ public class ApiResponse <T>{
     private T data;
     private String message;
     private HttpStatus status;
-    private int statusCode;
+
 
 
 

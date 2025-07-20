@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/lms
-    username: postgres
-    password: mypassword
+    url: jdbc:postgresql://localhost:5432/lms?currentSchema=public
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:mypassword}
     driver-class-name: org.postgresql.Driver
     hikari:
       minimum-idle: 5

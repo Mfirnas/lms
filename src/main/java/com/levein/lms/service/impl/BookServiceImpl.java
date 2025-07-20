@@ -112,7 +112,7 @@ public class BookServiceImpl implements BookService {
     public void deleteBook(long id) {
 
         try {
-            bookRepository.findById(id).orElseThrow(()->new BookNotFoundException(MessageConstants.Error.BOOK_NOT_FOUND+id));
+            bookRepository.findBookById(id).orElseThrow(()->new BookNotFoundException(MessageConstants.Error.BOOK_NOT_FOUND+id));
             bookRepository.deleteById(id);
         } catch (CommonServerException exception) {
             throw new CommonServerException(exception.getMessage());
