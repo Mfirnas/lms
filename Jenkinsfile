@@ -22,7 +22,7 @@ pipeline {
 
         stage('Build JAR') {
             steps {
-                bat 'mvnw.cmd clean package -DskipTests'
+                sh './mvnw clean package -DskipTests'
             }
         }
 
@@ -47,7 +47,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat """
+                sh """
                   docker stop ${APP_NAME} || true
                   docker rm ${APP_NAME} || true
                   docker run -d --name ${APP_NAME} -p 8081:8080 ${REGISTRY}/${APP_NAME}:${IMAGE_TAG}
