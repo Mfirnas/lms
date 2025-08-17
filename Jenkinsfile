@@ -2,16 +2,12 @@ pipeline {
     agent any
 
     environment {
-        REGISTRY = "firnasfz"        // Your DockerHub username
-        APP_NAME = "lms"             // App name
-        BRANCH   = "develop"         // Branch to trigger
+        REGISTRY = "firnasfz"
+        APP_NAME = "lms"
+        BRANCH   = "develop"
         IMAGE_TAG = "${env.BUILD_NUMBER}"
+        DOCKER_HOST = "tcp://host.docker.internal:2375"
     }
-
-    // triggers {
-    //     // Uncomment this if you can't setup webhook
-    //     // pollSCM('H/2 * * * *')
-    // }
 
     stages {
         stage('Checkout') {
