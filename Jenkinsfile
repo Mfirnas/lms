@@ -8,10 +8,10 @@ pipeline {
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
-    triggers {
-        // Uncomment this if you can't setup webhook
-        // pollSCM('H/2 * * * *')
-    }
+    // triggers {
+    //     // Uncomment this if you can't setup webhook
+    //     // pollSCM('H/2 * * * *')
+    // }
 
     stages {
         stage('Checkout') {
